@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264313540c6a8c143ac0cbcb9e054411, type: 3}
+  m_Name: Prefab Provider SO
+  m_EditorClassIdentifier: Assembly-CSharp::GameServiceSO
+  _mainCamera: {fileID: 208490674625950839, guid: 970392422cd0e2942a757c14774a0ccd, type: 3}
+  _uiCanvas: {fileID: 1227022967311972547, guid: 9bacb0a3a00249e4c8e3d28133ea4909, type: 3}
+  _eventSystem: {fileID: 7874609628380683127, guid: e20cc0ac0d76e4e4a81b3272b3111bbc, type: 3}

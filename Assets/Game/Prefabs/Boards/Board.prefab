@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 284795174293479360}
   - component: {fileID: 6261844657305601861}
   m_Layer: 0
-  m_Name: Cell
+  m_Name: Cell map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 3114016265323727411}
   - component: {fileID: 773771239310238224}
   m_Layer: 0
-  m_Name: Frame
+  m_Name: Frame map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
