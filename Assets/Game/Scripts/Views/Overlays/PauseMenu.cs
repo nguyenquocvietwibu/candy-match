@@ -22,9 +22,8 @@ namespace View.Overlay
         public event Action SettingsButtonClicked;
         public event Action MainMenuButtonClicked;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _resumeButton.onClick.AddListener(OnResumeButtonClicked);
             _restartButton.onClick.AddListener(OnRestartButtonClicked);
             _settingsButton.onClick.AddListener(OnSettingsButtonClicked);

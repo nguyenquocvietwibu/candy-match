@@ -17,3 +17,5 @@ MonoBehaviour:
   _ui: {fileID: 1256021214785946287, guid: 9bacb0a3a00249e4c8e3d28133ea4909, type: 3}
   _screenFader: {fileID: 4576456171011809880, guid: b21ae3c6252d2694d875083b43bd9b0f, type: 3}
   _gamePlayBg: {fileID: 3524175851830876302, guid: 8bb59a913166d974595319c677f50988, type: 3}
+  _board: {fileID: 4982567145615517515, guid: 5f9e03f60a80c7d469a898e5313aa6a6, type: 3}
+  _candy: {fileID: 9209170905093818286, guid: 4cc43dac250a50f48808799cfd865f87, type: 3}

@@ -14,9 +14,8 @@ namespace View.Overlay
 
         public event Action PauseButtonClicked;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _pauseButton.onClick.AddListener(OnPauseButtonClicked);
         }
 

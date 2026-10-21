@@ -18,7 +18,6 @@ namespace Presenter
         private void OnBackButtonClicked()
         {
             _uiNavigator.Hide<ISettingsMenu>();
-            _uiNavigator.ShowPrevious();
         }
     }
 }

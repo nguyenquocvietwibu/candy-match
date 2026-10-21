@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using View.Overlay;
+using View.World;
 
 [CreateAssetMenu(fileName = "Prefab Provider SO", menuName = "Scriptable Objects/Prefab Provider")]
 public class PrefabProviderSO : ScriptableObject
@@ -10,9 +11,13 @@ public class PrefabProviderSO : ScriptableObject
     [SerializeField] private UI _ui;
     [SerializeField] private ScreenFader _screenFader;
     [SerializeField] private GameplayBg _gamePlayBg;
+    [SerializeField] private Board _board;
+    [SerializeField] private Candy _candy;
     public Camera MainCamera => _mainCamera;
     public UI UI => _ui;
     public ScreenFader ScreenFader => _screenFader;
     public EventSystem EventSystem => _eventSystem;
     public GameplayBg GameplayBg => _gamePlayBg;
+    public Board Board => _board;
+    public Candy Candy => _candy;
 }

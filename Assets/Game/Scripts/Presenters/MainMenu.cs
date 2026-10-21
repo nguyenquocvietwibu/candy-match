@@ -20,7 +20,6 @@ namespace Presenter
 
         private void OnSettingsButtonClicked()
         {
-            _uiNavigator.Hide<IMainMenu>();
             _uiNavigator.Show<ISettingsMenu>();
         }
 

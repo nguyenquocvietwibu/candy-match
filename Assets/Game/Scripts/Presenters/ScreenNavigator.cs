@@ -9,9 +9,11 @@ namespace Presenter
         private IView _currentScreen;
         private readonly Dictionary<GameScreen, IView> _screenDict = new();
         private readonly IFader _screenFader;
-        public ScreenNavigator(IFader screenFader)
+        private readonly IViewNavigator _uiNavigator;
+        public ScreenNavigator(IFader screenFader, IViewNavigator uiNavigator)
         {
             _screenFader = screenFader;
+            _uiNavigator = uiNavigator;
         }
         public void Register(GameScreen screenType, IView screenView)
         {
@@ -26,6 +28,7 @@ namespace Presenter
             if (_currentScreen != null)
             {
                 await _screenFader.FadeOutAsync();
+                _uiNavigator.HideAll();
                 _currentScreen.Hide();
             }
             _currentScreen = screenView;

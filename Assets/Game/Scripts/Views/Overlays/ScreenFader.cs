@@ -37,12 +37,13 @@ public class ScreenFader : MonoBehaviour, IFader
         float elapsedTime = 0f;
         while (elapsedTime < _fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
             float progress = Mathf.Clamp01(elapsedTime / _fadeDuration);
             _canvasGroup.alpha = Mathf.Lerp(currentAlpha, targetAlpha, progress);
+            elapsedTime += Time.unscaledDeltaTime;
             await UniTask.NextFrame();
         }
         _canvasGroup.alpha = targetAlpha;
+
     }
 
     Task IFader.FadeInAsync()

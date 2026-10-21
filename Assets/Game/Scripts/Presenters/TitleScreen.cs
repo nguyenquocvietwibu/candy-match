@@ -2,19 +2,19 @@ namespace Presenter
 {
     public class TitleScreen : IView
     {
-        private readonly IViewNavigator _uiNavigator;
-        public TitleScreen(IViewNavigator uiNavigator)
+        private readonly IView _mainMenuView;
+        public TitleScreen(IView mainMenuView)
         {
-            _uiNavigator = uiNavigator;
+            _mainMenuView = mainMenuView;
         }
         public void Hide()
         {
-            _uiNavigator.HideAll();
+            _mainMenuView.Hide();
         }
 
         public void Show()
         {
-            _uiNavigator.Show<IMainMenu>();
+            _mainMenuView.Show();
         }
     }
 }

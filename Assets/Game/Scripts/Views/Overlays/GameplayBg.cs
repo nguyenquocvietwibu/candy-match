@@ -11,9 +11,8 @@ namespace View.Overlay
             _canvas.renderMode = RenderMode.ScreenSpaceCamera;
             _canvas.worldCamera = camera;
         }
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _canvas = GetComponent<Canvas>();
         }
     }

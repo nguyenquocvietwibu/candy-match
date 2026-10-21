@@ -1,26 +1,22 @@
 ﻿using Cysharp.Threading.Tasks;
 using Presenter;
+using System;
+using System.Collections.Generic;
 using Unity.Multiplayer.Center.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using View.Overlay;
+using View.World;
 
 
 public class GameBootstrapper : MonoBehaviour
 {
     [SerializeField] private PrefabProviderSO _prefabProviderSO;
-    private void Awake()
-    {
-        if (_prefabProviderSO == null)
-        {
-            throw new System.Exception("PrefabProviderSO is not assigned in the inspector.");
-        }
-    }
-    private async void Start()
+    private async void Awake()
     {
         await InitAsync();
-        Debug.Log("Bootstrapped");
     }
+
     private async UniTask InitAsync()
     {
         Camera mainCamera = Instantiate(_prefabProviderSO.MainCamera);
@@ -29,6 +25,7 @@ public class GameBootstrapper : MonoBehaviour
         ScreenFader screenFader = Instantiate(_prefabProviderSO.ScreenFader);
         GameplayBg gameplayBgView = Instantiate(_prefabProviderSO.GameplayBg);
         gameplayBgView.SetCanvasRenderModeCamera(mainCamera);
+        Board boardView = Instantiate(_prefabProviderSO.Board);
 
         View.Overlay.MainMenu mainMenuView = ui.MainMenu;
         View.Overlay.SettingsMenu settingsMenuView = ui.SettingsMenu;
@@ -38,20 +35,20 @@ public class GameBootstrapper : MonoBehaviour
 
         Presenter.ViewNavigator uiNavigator = new();
 
-        uiNavigator.Register<IMainMenu>(mainMenuView);
         uiNavigator.Register<ISettingsMenu>(settingsMenuView);
         uiNavigator.Register<IPauseMenu>(pauseMenuView);
 
         Presenter.GameplayScreen gameplayScreen = new(
             hudView: hudView,
-            uiNavigator: uiNavigator,
-            gameplayBgView: gameplayBgView);
+            gameplayBgView: gameplayBgView,
+            boardView: boardView);
 
 
-        Presenter.TitleScreen titleScreen = new(uiNavigator);
+        Presenter.TitleScreen titleScreen = new(mainMenuView);
 
         Presenter.ScreenNavigator screenNavigator = new(
-            screenFader: screenFader);
+            screenFader: screenFader,
+            uiNavigator: uiNavigator);
 
         screenNavigator.Register(GameScreen.Title, titleScreen);
         screenNavigator.Register(GameScreen.Gameplay, gameplayScreen);
@@ -74,8 +71,7 @@ public class GameBootstrapper : MonoBehaviour
             uiNavigator: uiNavigator,
             screenNavigator: screenNavigator);
 
-        await UniTask.NextFrame();
+        await UniTask.DelayFrame(3);
         await screenNavigator.NavigateToAsync(GameScreen.Title);
-
     }
 }

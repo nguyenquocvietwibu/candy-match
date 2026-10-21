@@ -1,12 +1,14 @@
-﻿
-//using System.Diagnostics;
-using UnityEngine;
-public static class Debugger
+﻿using UnityEngine;
+
+namespace Util
 {
-    //[Conditional("DEBUG")]
-    public static void Log(string message)
+    public static class Debugger
     {
-        //System.Diagnostics.Debug.WriteLine(message);
-        Debug.Log(message);
+        public static void Log(object message)
+        {
+#if UNITY_EDITOR
+            Debug.Log(message);
+#endif
+        }
     }
 }

@@ -29,7 +29,6 @@ namespace Presenter
         {
             _activeView = _viewStack.Pop();
             _activeView.Show();
-
         }
         private IView GetViewBy<T>()
         {
@@ -38,9 +37,12 @@ namespace Presenter
 
         public void HideAll()
         {
-            _activeView.Hide();
-            _activeView = null;
-            while (_viewStack.Count > 0) _activeView = _viewStack.Pop();
+            if (_activeView != null)
+            {
+                _activeView.Hide();
+                _activeView = null;
+            }
+            while (_viewStack.Count > 0) _viewStack.Pop().Hide();
         }
     }
 }

@@ -15,9 +15,8 @@ namespace View.Overlay
         public event Action SettingsButtonClicked;
         public event Action QuitButtonClicked;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _playButton.onClick.AddListener(OnPlayButtonClicked);
             _settingsButton.onClick.AddListener(OnSettingsButtonClicked);
             _quitButton.onClick.AddListener(OnQuitButtonClicked);

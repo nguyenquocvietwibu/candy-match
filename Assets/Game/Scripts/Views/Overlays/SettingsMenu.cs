@@ -18,9 +18,8 @@ namespace View.Overlay
 
         public event Action BackButtonClicked;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _backButton.onClick.AddListener(OnBackButtonClicked);
         }
 
