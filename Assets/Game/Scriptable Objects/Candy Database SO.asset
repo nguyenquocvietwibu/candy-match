@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd28d42cde3b414e83f0c3b436f6b4e, type: 3}
   m_Name: Candy Database SO
   m_EditorClassIdentifier: Assembly-CSharp::CandyDatabase
-  _candyEntryList: []
-  _candyTypeDict: []
+  _candyTypeDict:
+  - key: 1
+    value: {fileID: 21300000, guid: b7481a4c424715542a70ac1efc7468db, type: 3}
+  - key: 2
+    value: {fileID: 21300000, guid: a292bddf8693e00428dace4a7f770aa6, type: 3}
+  - key: 3
+    value: {fileID: 21300000, guid: 23c39604c54f9f944ac7791b186f3dce, type: 3}
+  - key: 4
+    value: {fileID: 21300000, guid: fbb6c45b2e0f5424cace793121f03e56, type: 3}
+  - key: 5
+    value: {fileID: 21300000, guid: 5b0c287fddf11b24d910a6b285ee1807, type: 3}
+  - key: 6
+    value: {fileID: 21300000, guid: 50dd2e8acaa7426438d693e39eb73026, type: 3}
+  - key: 7
+    value: {fileID: 21300000, guid: 140169fe467b8b649aa2541e0c8d6c09, type: 3}

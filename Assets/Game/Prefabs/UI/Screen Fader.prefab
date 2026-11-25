@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5352211089828634857}
   - component: {fileID: 5416933218039408763}
   - component: {fileID: 3821265960132923460}
-  - component: {fileID: 4576456171011809880}
+  - component: {fileID: -4082082047512606920}
   m_Layer: 5
   m_Name: Screen Fader
   m_TagString: Untagged
@@ -152,11 +152,11 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843049134378573318}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &4576456171011809880
+--- !u!114 &-4082082047512606920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenFader
   _canvasGroup: {fileID: 3821265960132923460}
-  _fadeDuration: 2
+  _fadeDuration: 1
